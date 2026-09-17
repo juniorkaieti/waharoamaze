@@ -143,6 +143,11 @@ def run_game():
         "Bula"
     ]
 
+    #adding players
+    player = pygame.Rect(40, 40, 25, 25)
+    player_speed = 4
+
+
     running = True
     while running:
         clock.tick(FPS)
