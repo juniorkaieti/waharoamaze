@@ -15,13 +15,14 @@ def run_game():
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Waharoa Maze")
     clock = pygame.time.Clock()
-    font = pygame.font.Font(None, 70)
+
+    title_font = pygame.font.Font(None, 70)
     font = pygame.font.Font(None, 50)
     small_font = pygame.font.Font(None, 30)
 
     #5 maze levels 
 
-    level = [
+    levels = [
         #Coldstream
         [
             pygame.Rect(0, 0, 800, 20),
@@ -234,15 +235,15 @@ def run_game():
 
         #Welcome Screen
         if welcome:
-            
-        #screen title use by the help of ai
-        title = font.render("Waharoa Maze", True, WHITE)
-        start = title_font.render("Kia Ora! Press ENTER to START", True, RED)
-        contro;ss = small_font.render("Use WASD or Arrow KEys to move", True, WHITE)
 
-        screen.blit(title, (250, 250))
-        screen.blit(start, (235, 300))
-        screen.blit(controls, (260, 360))
+        #screen title use by the help of ai
+            title = font.render("Waharoa Maze", True, WHITE)
+            start = title_font.render("Press ENTER to START", True, ORANGE)
+            controls = small_font.render("Use WASD or Arrow KEys to move", True, WHITE)
+
+            screen.blit(title, (250, 250))
+            screen.blit(start, (235, 300))
+            screen.blit(controls, (260, 360))
 
         pygame.display.flip()
     pygame.quit()

@@ -26,7 +26,7 @@ def run_game():
     # 5 MAZE LEVELS
     # -------------------------
 
-    levels = [
+    level = [
 
         # LEVEL 1
         [
