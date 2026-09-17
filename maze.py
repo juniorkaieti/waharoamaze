@@ -228,14 +228,22 @@ def run_game():
             #finish line
             if player.colliderect(finish):
                 #showing the information box
-                info_box = True                    
-                    
-
-            
+                info_box = True
+        #Screen color    
         screen.fill(NAVY)
+
+        #Welcome Screen
+        if welcome:
+            
         #screen title use by the help of ai
         title = font.render("Waharoa Maze", True, WHITE)
+        start = title_font.render("Kia Ora! Press ENTER to START", True, RED)
+        contro;ss = small_font.render("Use WASD or Arrow KEys to move", True, WHITE)
+
         screen.blit(title, (250, 250))
+        screen.blit(start, (235, 300))
+        screen.blit(controls, (260, 360))
+
         pygame.display.flip()
     pygame.quit()
 if __name__ == "__main__":
