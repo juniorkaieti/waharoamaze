@@ -147,8 +147,20 @@ def run_game():
     player = pygame.Rect(40, 40, 25, 25)
     player_speed = 4
 
+    # finish
+    finish = pygame.Rect(730, 520, 40, 40)
+
+    # game states
+    welcome = True
+    won = False
+    info_box = False
+
+    level = 0
+
 
     running = True
+    start_time = pygame.time.get.ticks
+    
     while running:
         clock.tick(FPS)
         for event in pygame.event.get():
