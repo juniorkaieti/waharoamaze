@@ -203,6 +203,32 @@ def run_game():
                         else:
                             player.x = 40
                             player.y = 40
+        #Player controlss
+        if not welcome and not won and not info_box:
+            keys = pygame.key.get_pressed()
+            old_x = player.x
+            old_y = player.y
+            #player being able to move
+            if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+                player.x -= player_speed
+
+            if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+                player.x += player_speed
+
+            if keys[pygame.K_UP] or keys[pygame.K_w]:
+                player.y -= player_speed
+
+            if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+                player.y += player_speed
+            #wall
+            for wall in levels[level]:
+                if player.colliderect(wall):
+                    player.x = old_x
+                    player.y = old_y
+            #finish line
+            if player.colliderect(finish):
+                #showing the information box
+                info_box = True                    
                     
 
             
