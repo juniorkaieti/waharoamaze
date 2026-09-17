@@ -135,6 +135,14 @@ def run_game():
         ]
     ]
 
+    information = [
+        "Hi"
+        "Mauri"
+        "Kia ora"
+        "Malo"
+        "Bula"
+    ]
+
     running = True
     while running:
         clock.tick(FPS)
