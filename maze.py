@@ -159,13 +159,53 @@ def run_game():
 
 
     running = True
-    start_time = pygame.time.get.ticks
-    
+    start_time = pygame.time.get_ticks
+
     while running:
         clock.tick(FPS)
+
+        #Events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type == pygame.KEYDOWN:
+                # Start game
+                if welcome and event.key == pygame.K_RETURN:
+                    welcome = False
+                    start_time = pygame.time.get_ticks()
+                # Restart
+                if event.key == pygame.K_r:
+                    welcome = True
+                    won = False
+                    info_box = False
+                    level = 0
+                    player.x = 40
+                    player.y = 40
+            # Click to close information box
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if info_box:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    # Continue button
+                    if 330 <= mouse_x <= 470 and 430 <= mouse_y <= 480:
+                        info_box = False
+                        level += 1
+                        if level >= 5:
+                            won = True
+                        else:
+                            player.x = 40
+                            player.y = 40
+                    # X button
+                    if 700 <= mouse_x <= 750 and 150 <= mouse_y <= 200:
+                        info_box = False
+                        level += 1
+                        if level >= 5:
+                            won = True
+                        else:
+                            player.x = 40
+                            player.y = 40
+                    
+
+            
         screen.fill(NAVY)
         #screen title use by the help of ai
         title = font.render("Waharoa Maze", True, WHITE)
