@@ -252,6 +252,13 @@ def run_game():
             #maze walls
              for wall in levels[level]:
                 pygame.draw.rect(screen, DARKGREEN, wall)
+            #finish line
+                pygame.draw.rect(screen, GREEN, finish)
+            #level
+                level_text = small_font.render(
+                    "Level" + str(level + 1) + " / 5", True, WHITE
+                )
+
 
         pygame.display.flip()
     pygame.quit()
