@@ -9,6 +9,7 @@ ORANGE = (255, 149, 0)
 GREEN = (50, 200, 100)
 BLACK = (0, 0, 0)
 DARKGREEN = (34, 139, 34)
+RED = (255, 0, 0)
 
 def run_game():
     pygame.init()
@@ -239,7 +240,7 @@ def run_game():
 
         #screen title use by the help of ai
             title = font.render("Waharoa Maze", True, WHITE)
-            start = title_font.render("Press ENTER to Play", True, ORANGE)
+            start = title_font.render("Press ENTER to Play", True, RED)
             controls = small_font.render("Use WASD or Arrow Keys to move", True, WHITE)
 
             screen.blit(title, (250, 250))
@@ -258,6 +259,14 @@ def run_game():
                 level_text = small_font.render(
                     "Level" + str(level + 1) + " / 5", True, WHITE
                 )
+            #Information box
+
+                if info_box:
+                #dark overlay
+                    overlay = pygame.Surface((WIDTH, HEIGHT))
+                    overlay.set_alpha(180)
+                    overlay.fill(BLACK)
+                    screen.blit(overlay, (0, 0))
 
 
         pygame.display.flip()
