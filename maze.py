@@ -245,10 +245,13 @@ def run_game():
             title = font.render("Waharoa Maze", True, WHITE)
             start = title_font.render("Press ENTER to Play", True, RED)
             controls = small_font.render("Use WASD or Arrow Keys to move", True, WHITE)
+            image = pygame.image.load("LowResJuniorWharoa (1).png")
+            
+            i = 80
 
-            screen.blit(title, (250, 250))
-            screen.blit(start, (235, 300))
-            screen.blit(controls, (260, 360))
+            screen.blit(title, (150, 250))
+            screen.blit(start, (150, 300))
+            screen.blit(controls, (150, 360))
 
         #Game screen
         elif not won:
